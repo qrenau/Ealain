@@ -9,16 +9,15 @@ namespace sensor {
         assert(domain.dimension == _proj.size());
         D out = domain;
         for(auto it=ealain::begin(out); it != ealain::end(out); ++it) {
-            // The underlying model assumes normalized coordinates ou pas !
-            std::vector<size_t> position_idx;
-            std::vector<double> position_irl;
-            position_idx.reserve(domain.dimension);
-            position_irl.reserve(domain.dimension);
+            std::vector<size_t> position_discr;
+            std::vector<double> position_num;
+            position_discr.reserve(domain.dimension);
+            position_num.reserve(domain.dimension);
             for(std::size_t d = 0; d < domain.dimension; ++d) {
-                position_idx.push_back(it(d));
+                position_discr.push_back(it(d));
             }
-            position_irl = _proj(position_idx);
-            *it = this->sense(position_irl);
+            position_num = _proj(position_discr);
+            *it = this->sense(position_num);
         }
         return out;
     }
