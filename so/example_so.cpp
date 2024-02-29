@@ -17,6 +17,12 @@
 #include <Ealain/detection/group.h>
 #include <Ealain/detection/camera.h>
 
+/**
+ * Create a single objective instance
+ */
+
+// How to launch:
+// ./example_co instance_size nb_cameras x0 y0 ...
 
 int main(int argc, char* argv[])
 {

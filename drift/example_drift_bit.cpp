@@ -17,6 +17,14 @@
 #include <Ealain/detection/group.h>
 #include <Ealain/detection/camera.h>
 
+/**
+ * Create drifting instances
+ * in numerical space by creating
+ * Constraints In squares
+ */
+
+// How to launch:
+// ./example_drift_bit instance_size nb_cameras nb_constraints bitstring
 using Shape = std::vector<std::vector<double>>;
 
 Shape n_points_circle(std::vector<double> center, double radius, int nb_constraints)

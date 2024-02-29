@@ -1,3 +1,3 @@
 # Ealain
 
-Camera Modelisation Software for Optimisation
+Camera Simulation Tool to Generate Instances for Multiple Classes of Optimisation Problem

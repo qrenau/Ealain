@@ -23,6 +23,9 @@
  * Each camera should be out of this square
  */
 
+// How to launch:
+// ./example_co instance_size nb_cameras x0 y0 ...
+
 using Shape = std::vector<std::vector<double>>;
 
 int main(int argc, char* argv[])

@@ -14,6 +14,10 @@
 #include <Ealain/detection/group.h>
 #include <Ealain/detection/camera.h>
 
+/**
+ * Create MO instance with two cameras models
+ * and their associated cost
+ */
 
 // How to run: ./example_mo size grid nb_cam_omnidir nb_cam_binary x_omnidir1 y_omnidir1 ... x_bimary1 y_binary1 ...
 int main(int argc, char* argv[])

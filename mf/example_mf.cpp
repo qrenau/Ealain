@@ -15,6 +15,13 @@
 #include <Ealain/detection/group.h>
 #include <Ealain/detection/camera.h>
 
+/**
+ * Create the same instance with two
+ * discretisations, one half of the other
+ */
+
+// How to launch:
+// ./example_mf instance_size nb_cameras x0 y0 ...
 
 int main(int argc, char* argv[])
 {
@@ -54,11 +61,11 @@ int main(int argc, char* argv[])
     int k = 0;
     for (int i=0; i<nb_cameras; i++)
     {
-        point[0] = (m1-1)*atof(argv[3+k]);
-        point2[0] = (m2-1)*atof(argv[3+k]);
+        point[0] = atof(argv[3+k]);
+        point2[0] = (m2-1)*(atof(argv[3+k]))/m2;
         k++;
-        point[1] = (m1-1)*atof(argv[3+k]);
-        point2[1] = (m2-1)*atof(argv[3+k]);
+        point[1] = atof(argv[3+k]);
+        point2[1] = (m2-1)*(atof(argv[3+k]))/m2;
         k++;
         ealain::camera::Omnidir camera_big(map1, p1_map, point[0], point[1], n/2);
         cameras_big.push_back(camera_big);
