@@ -2,6 +2,8 @@
 
 Camera Simulation Tool to Generate Instances for Multiple Classes of Optimisation Problem
 
+![ealain](https://github.com/qrenau/Ealain/assets/55181095/915706ca-ba43-45c4-8da8-639bd247d398)
+
 ## Compilation
 
 In order to compile the project, run the following command: 
