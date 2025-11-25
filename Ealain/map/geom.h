@@ -28,6 +28,10 @@ namespace ealain {
          */
         std::pair<bool,double> is_in_polygon(const std::vector<std::vector<double>>& poly, const std::vector<double>& point);
 
+        // Ensure angle is between 0 and 2*pi
+        double angle_trunc(double);
+
+        double azimuth(double point_x, double point_y, double camera_x, double camera_y);
 
         // Compute the full visibility map as if everything was visible
         unsigned int full_visibility_map_2D(std::vector<std::vector<char>>& visibles, const inst::Map& map);

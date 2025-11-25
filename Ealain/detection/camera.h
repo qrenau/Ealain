@@ -127,6 +127,128 @@ namespace ealain {
 
         };
 
+
+        /** Simple camera seing in one direction
+         *
+         * Probability of detection decrease with range.
+         */
+        class Unidir : public sensor::Sensor<2>
+        {
+            public:
+                double range;
+                double direction;
+                double aperture;
+                sensor::Situated geo;
+
+                Unidir(
+                    const inst::Map& map,
+                    const proj::Projection<double,size_t>& p,
+                    const double range_
+                ) :
+                    sensor::Sensor<2>(p),
+                    range(range_),
+                    geo(map,p)
+                {
+                    assert(range >= 0);
+                }
+
+                Unidir(
+                    const inst::Map& map,
+                    const proj::Projection<double,size_t>& p,
+                    const double x,
+                    const double y,
+                    const double range_
+                ) :
+                    sensor::Sensor<2>(p),
+                    range(range_),
+                    geo(map,p,x,y)
+                {
+                    assert(range >= 0);
+                }
+
+                Unidir(
+                    const inst::Map& map,
+                    const proj::Projection<double,size_t>& p,
+                    const bool bit,
+                    const double x,
+                    const double y,
+                    const double range_
+                ) :
+                    sensor::Sensor<2>(p),
+                    range(range_),
+                    geo(map,p,bit,x,y)
+                {
+                    assert(range >= 0);
+                }
+
+            protected:
+                const double _eps = 1e-6;
+
+                virtual double sense(const Position& position);
+
+        };
+
+
+        /** Simple camera seing in one direction
+         *
+         * Probability of detection decrease with range.
+         */
+        class Unibinary : public sensor::Sensor<2>
+        {
+            public:
+                double range;
+                double direction;
+                double aperture;
+                sensor::Situated geo;
+
+                Unibinary(
+                    const inst::Map& map,
+                    const proj::Projection<double,size_t>& p,
+                    const double range_
+                ) :
+                    sensor::Sensor<2>(p),
+                    range(range_),
+                    geo(map,p)
+                {
+                    assert(range >= 0);
+                }
+
+                Unibinary(
+                    const inst::Map& map,
+                    const proj::Projection<double,size_t>& p,
+                    const double x,
+                    const double y,
+                    const double range_
+                ) :
+                    sensor::Sensor<2>(p),
+                    range(range_),
+                    geo(map,p,x,y)
+                {
+                    assert(range >= 0);
+                }
+
+                Unibinary(
+                    const inst::Map& map,
+                    const proj::Projection<double,size_t>& p,
+                    const bool bit,
+                    const double x,
+                    const double y,
+                    const double range_
+                ) :
+                    sensor::Sensor<2>(p),
+                    range(range_),
+                    geo(map,p,bit,x,y)
+                {
+                    assert(range >= 0);
+                }
+
+            protected:
+                const double _eps = 1e-6;
+
+                virtual double sense(const Position& position);
+
+        };
+
     } // camera
 } // ealain
 

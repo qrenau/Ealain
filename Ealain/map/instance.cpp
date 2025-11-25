@@ -7,6 +7,7 @@
 #include <tuple>
 #include <numeric>
 #include <ctime>
+#include <sstream>
 
 #include "../utils.h"
 #include "instance.h"

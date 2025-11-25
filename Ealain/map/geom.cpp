@@ -89,6 +89,28 @@ std::pair<bool,double> is_in_polygon(const std::vector<std::vector<double>>& pol
     }
 }
 
+double angle_trunc(double angle)
+{
+    while (angle < 0)
+    {
+        angle = 2*pi + angle;
+    }
+    while (angle > 2*pi)
+    {
+        angle = 2*pi - angle;
+    }
+    return angle;
+}
+
+double azimuth(double point_x, double point_y, double camera_x, double camera_y)
+{
+    double alpha;
+    double dx = point_x - camera_x;
+    double dy = point_y - camera_y;
+    alpha = angle_trunc(std::atan2(dy, dx));
+    assert(is_angle(alpha));
+    return alpha;
+}
 
 unsigned int full_visibility_map_2D(std::vector<std::vector<char>>& visibles, const inst::Map& map)
 {
